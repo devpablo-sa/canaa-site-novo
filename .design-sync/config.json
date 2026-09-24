@@ -1,0 +1,21 @@
+{
+  "projectId": "c01a2161-b6da-436f-b29c-4746099c9998",
+  "shape": "package",
+  "pkg": "canaa",
+  "globalName": "Canaa",
+  "srcDir": ".design-sync/entry-src",
+  "tsconfig": "tsconfig.json",
+  "buildCmd": "npm run build",
+  "cssEntry": ".next/static/chunks/2hg7u_o82sxl8.css",
+  "readmeHeader": ".design-sync/conventions.md",
+  "componentSrcMap": {
+    "ImageUploadField": "src/components/admin/ImageUploadField.tsx",
+    "RichTextEditor": "src/components/admin/RichTextEditor.tsx",
+    "JobApplicationForm": "src/components/forms/JobApplicationForm.tsx",
+    "NewsletterForm": "src/components/forms/NewsletterForm.tsx",
+    "LedgerChart": "src/components/site/LedgerChart.tsx",
+    "SectionHeading": "src/components/site/SectionHeading.tsx",
+    "SolutionIcon": "src/components/site/SolutionIcon.tsx",
+    "Testimonials": "src/components/site/Testimonials.tsx"
+  }
+}

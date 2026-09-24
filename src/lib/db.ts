@@ -1,0 +1,106 @@
+import Database from "better-sqlite3";
+import path from "path";
+import fs from "fs";
+
+const DATA_DIR = path.join(process.cwd(), "data");
+if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
+const DB_PATH = path.join(DATA_DIR, "canaa.db");
+
+declare global {
+  var __canaaDb: Database.Database | undefined;
+}
+
+function createConnection() {
+  const db = new Database(DB_PATH);
+  db.pragma("journal_mode = WAL");
+  db.pragma("foreign_keys = ON");
+  migrate(db);
+  return db;
+}
+
+function migrate(db: Database.Database) {
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS categories (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      slug TEXT NOT NULL UNIQUE
+    );
+
+    CREATE TABLE IF NOT EXISTS tags (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      slug TEXT NOT NULL UNIQUE
+    );
+
+    CREATE TABLE IF NOT EXISTS posts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      slug TEXT NOT NULL,
+      primary_category_slug TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'draft', -- draft | published
+      published_at TEXT,
+      updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+      seo_title TEXT,
+      seo_description TEXT,
+      focus_keyword TEXT,
+      excerpt TEXT,
+      content_html TEXT NOT NULL DEFAULT '',
+      featured_image TEXT,
+      reading_time_minutes INTEGER NOT NULL DEFAULT 1,
+      UNIQUE(primary_category_slug, slug)
+    );
+
+    CREATE TABLE IF NOT EXISTS post_categories (
+      post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+      category_id INTEGER NOT NULL REFERENCES categories(id) ON DELETE CASCADE,
+      PRIMARY KEY (post_id, category_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS post_tags (
+      post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+      tag_id INTEGER NOT NULL REFERENCES tags(id) ON DELETE CASCADE,
+      PRIMARY KEY (post_id, tag_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS post_views (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+      viewed_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+    CREATE INDEX IF NOT EXISTS idx_post_views_post_id ON post_views(post_id);
+    CREATE INDEX IF NOT EXISTS idx_post_views_viewed_at ON post_views(viewed_at);
+
+    CREATE TABLE IF NOT EXISTS admin_users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT NOT NULL UNIQUE,
+      password_hash TEXT NOT NULL,
+      name TEXT NOT NULL DEFAULT 'Admin'
+    );
+
+    CREATE TABLE IF NOT EXISTS leads (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source TEXT NOT NULL,
+      name TEXT NOT NULL,
+      company TEXT,
+      whatsapp TEXT,
+      email TEXT,
+      message TEXT,
+      lgpd_consent INTEGER NOT NULL DEFAULT 0,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT NOT NULL UNIQUE,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+  `);
+}
+
+export function getDb(): Database.Database {
+  if (!global.__canaaDb) {
+    global.__canaaDb = createConnection();
+  }
+  return global.__canaaDb;
+}

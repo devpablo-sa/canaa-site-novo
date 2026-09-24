@@ -1,0 +1,354 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Blog",
+      "slug": "blog",
+      "count": 4
+    },
+    {
+      "id": 43,
+      "name": "Business Intelligence (BI)",
+      "slug": "business-intelligence-bi",
+      "count": 11
+    },
+    {
+      "id": 2,
+      "name": "Controladoria",
+      "slug": "controladoria",
+      "count": 10
+    },
+    {
+      "id": 18,
+      "name": "Gestão Financeira",
+      "slug": "gestao-financeira",
+      "count": 14
+    },
+    {
+      "id": 41,
+      "name": "Lucros e Margens",
+      "slug": "lucros-e-margens",
+      "count": 8
+    },
+    {
+      "id": 42,
+      "name": "Projeções e Orçamentos",
+      "slug": "projecoes-e-orcamentos",
+      "count": 8
+    },
+    {
+      "id": 44,
+      "name": "Valuation",
+      "slug": "valuation",
+      "count": 4
+    }
+  ],
+  "tags": [
+    {
+      "id": 70,
+      "name": "#consultoriafinanceira",
+      "slug": "consultoriafinanceira",
+      "count": 2
+    },
+    {
+      "id": 74,
+      "name": "#ControladoriaCanaa",
+      "slug": "controladoriacanaa",
+      "count": 1
+    },
+    {
+      "id": 73,
+      "name": "#Controlaodoria",
+      "slug": "controlaodoria",
+      "count": 2
+    },
+    {
+      "id": 72,
+      "name": "#OBZ",
+      "slug": "obz",
+      "count": 1
+    },
+    {
+      "id": 69,
+      "name": "#orçamento",
+      "slug": "orcamento",
+      "count": 1
+    },
+    {
+      "id": 71,
+      "name": "#orçamentobasezero",
+      "slug": "orcamentobasezero",
+      "count": 1
+    },
+    {
+      "id": 47,
+      "name": "análise de viabilidade",
+      "slug": "analise-de-viabilidade",
+      "count": 11
+    },
+    {
+      "id": 45,
+      "name": "análise prospectiva",
+      "slug": "analise-prospectiva",
+      "count": 5
+    },
+    {
+      "id": 57,
+      "name": "Analytics",
+      "slug": "analytics",
+      "count": 5
+    },
+    {
+      "id": 56,
+      "name": "BI",
+      "slug": "bi",
+      "count": 10
+    },
+    {
+      "id": 61,
+      "name": "Bottom Up",
+      "slug": "bottom-up",
+      "count": 1
+    },
+    {
+      "id": 39,
+      "name": "Business Intelligence",
+      "slug": "business-intelligence",
+      "count": 20
+    },
+    {
+      "id": 35,
+      "name": "capital de giro",
+      "slug": "capital-de-giro",
+      "count": 12
+    },
+    {
+      "id": 67,
+      "name": "CFO as a Service",
+      "slug": "cfo-as-a-service",
+      "count": 1
+    },
+    {
+      "id": 14,
+      "name": "ciclo econômico",
+      "slug": "ciclo-economico",
+      "count": 6
+    },
+    {
+      "id": 13,
+      "name": "ciclo financeiro",
+      "slug": "ciclo-financeiro",
+      "count": 9
+    },
+    {
+      "id": 15,
+      "name": "ciclo operacional",
+      "slug": "ciclo-operacional",
+      "count": 4
+    },
+    {
+      "id": 16,
+      "name": "contabilidade",
+      "slug": "contabilidade",
+      "count": 6
+    },
+    {
+      "id": 11,
+      "name": "controladoria",
+      "slug": "controladoria",
+      "count": 32
+    },
+    {
+      "id": 65,
+      "name": "controladoria terceirizada",
+      "slug": "controladoria-terceirizada",
+      "count": 0
+    },
+    {
+      "id": 36,
+      "name": "controle financeiro",
+      "slug": "controle-financeiro",
+      "count": 13
+    },
+    {
+      "id": 64,
+      "name": "cubo de resultados",
+      "slug": "cubo-de-resultados",
+      "count": 2
+    },
+    {
+      "id": 52,
+      "name": "custos",
+      "slug": "custos",
+      "count": 1
+    },
+    {
+      "id": 58,
+      "name": "Dados",
+      "slug": "dados",
+      "count": 1
+    },
+    {
+      "id": 34,
+      "name": "empreendedorismo",
+      "slug": "empreendedorismo",
+      "count": 4
+    },
+    {
+      "id": 68,
+      "name": "ESG",
+      "slug": "esg",
+      "count": 1
+    },
+    {
+      "id": 54,
+      "name": "EVA",
+      "slug": "eva",
+      "count": 1
+    },
+    {
+      "id": 12,
+      "name": "fluxo de caixa",
+      "slug": "fluxo-de-caixa",
+      "count": 12
+    },
+    {
+      "id": 66,
+      "name": "FP&amp;A",
+      "slug": "fpa",
+      "count": 1
+    },
+    {
+      "id": 63,
+      "name": "Gestão de Futuro",
+      "slug": "gestao-de-futuro",
+      "count": 4
+    },
+    {
+      "id": 19,
+      "name": "gestão financeira",
+      "slug": "gestao-financeira",
+      "count": 27
+    },
+    {
+      "id": 37,
+      "name": "gestão por squad",
+      "slug": "gestao-por-squad",
+      "count": 3
+    },
+    {
+      "id": 33,
+      "name": "Indicadores",
+      "slug": "indicadores",
+      "count": 17
+    },
+    {
+      "id": 31,
+      "name": "KPI",
+      "slug": "kpi",
+      "count": 6
+    },
+    {
+      "id": 51,
+      "name": "lucro",
+      "slug": "lucro",
+      "count": 3
+    },
+    {
+      "id": 50,
+      "name": "margem de contribuição",
+      "slug": "margem-de-contribuicao",
+      "count": 3
+    },
+    {
+      "id": 49,
+      "name": "margem de lucro",
+      "slug": "margem-de-lucro",
+      "count": 11
+    },
+    {
+      "id": 55,
+      "name": "Métricas",
+      "slug": "metricas",
+      "count": 4
+    },
+    {
+      "id": 32,
+      "name": "OKR",
+      "slug": "okr",
+      "count": 9
+    },
+    {
+      "id": 48,
+      "name": "precificação",
+      "slug": "precificacao",
+      "count": 2
+    },
+    {
+      "id": 46,
+      "name": "projeções e orçamentos",
+      "slug": "projecoes-e-orcamentos",
+      "count": 4
+    },
+    {
+      "id": 59,
+      "name": "relatórios financeiros",
+      "slug": "relatorios-financeiros",
+      "count": 1
+    },
+    {
+      "id": 60,
+      "name": "relatórios gerenciais",
+      "slug": "relatorios-gerenciais",
+      "count": 1
+    },
+    {
+      "id": 40,
+      "name": "Reports estratégicos",
+      "slug": "reports-estrategicos",
+      "count": 19
+    },
+    {
+      "id": 30,
+      "name": "saúde financeira",
+      "slug": "saude-financeira",
+      "count": 8
+    },
+    {
+      "id": 38,
+      "name": "squads empresariais",
+      "slug": "squads-empresariais",
+      "count": 5
+    },
+    {
+      "id": 5,
+      "name": "Tag Teste 1",
+      "slug": "tag-teste-1",
+      "count": 0
+    },
+    {
+      "id": 6,
+      "name": "Tag Teste 2",
+      "slug": "tag-teste-2",
+      "count": 0
+    },
+    {
+      "id": 7,
+      "name": "Tag Teste 3",
+      "slug": "tag-teste-3",
+      "count": 0
+    },
+    {
+      "id": 62,
+      "name": "To Down",
+      "slug": "to-down",
+      "count": 1
+    },
+    {
+      "id": 53,
+      "name": "valuation",
+      "slug": "valuation",
+      "count": 4
+    }
+  ]
+}
