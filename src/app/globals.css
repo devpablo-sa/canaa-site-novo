@@ -138,6 +138,23 @@ body {
   animation: fade-rise 0.7s ease-out both;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 .article-content {
   color: var(--color-navy-700);
   font-size: 1.0625rem;

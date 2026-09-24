@@ -45,10 +45,7 @@ const reasons = [
   },
 ];
 
-const clientLogos = [
-  "logo32", "logo31", "logo30", "logo29", "logo28", "logo27", "logo26", "logo24",
-  "logo23", "logo22", "logo21", "logo20",
-];
+const clientLogos = Array.from({ length: 32 }, (_, i) => `logo${i + 1}`);
 
 export default async function HomePage() {
   const recentPosts = getRecentPosts(3);
@@ -153,18 +150,25 @@ export default async function HomePage() {
           <div className="mt-10">
             <Testimonials />
           </div>
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 opacity-70">
-            {clientLogos.map((name) => (
-              <div key={name} className="relative h-10 w-24 grayscale brightness-0 invert opacity-80">
-                <Image
-                  src={`https://canaacontroladoria.com.br/wp-content/uploads/2024/05/${name}.png`}
-                  alt=""
-                  fill
-                  sizes="100px"
-                  className="object-contain"
-                />
-              </div>
-            ))}
+          <div className="relative mt-14 overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-navy-900 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-navy-900 to-transparent" />
+            <div className="flex w-max animate-marquee items-center gap-4">
+              {[...clientLogos, ...clientLogos].map((name, i) => (
+                <div
+                  key={`${name}-${i}`}
+                  className="relative h-14 w-28 shrink-0 rounded-box bg-base-100 p-2 transition-transform duration-200 hover:scale-110"
+                >
+                  <Image
+                    src={`https://canaacontroladoria.com.br/wp-content/uploads/2024/05/${name}.png`}
+                    alt=""
+                    fill
+                    sizes="112px"
+                    className="object-contain p-1"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
